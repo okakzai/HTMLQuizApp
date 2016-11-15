@@ -1,2 +1,0 @@
-# HTMLQuizApp
-HTML Trivia Quiz
