@@ -26,7 +26,7 @@ function onPause() {
 function onResume() {
   if (!isAppForeground) {
     setTimeout(admob.createBannerView, 1);
-    setTimeout(admob.requestInterstitialAd, 1);
+    setTimeout(admob.requestInterstitialAd, 1000 * 60 * 2);
     isAppForeground = true;
   }
 }
@@ -58,7 +58,7 @@ function initAds() {
       autoShowInterstitial: true
     });
 
-    //registerAdEvents();
+    registerAdEvents();
 
   } else {
     alert('AdMobAds plugin not ready');
