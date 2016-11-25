@@ -44,8 +44,8 @@ function initAds() {
   if (admob) {
     var adPublisherIds = {
         android : {
-        banner : "ca-app-pub-2992495660183815/6015103080",
-        interstitial : "ca-app-pub-2992495660183815/7491836280"
+        banner : "ca-app-pub-9008926290238612/4489704660",
+        interstitial : "ca-app-pub-9008926290238612/5966437867"
       }
     };
 
