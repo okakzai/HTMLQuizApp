@@ -18,15 +18,15 @@ function onAdClosed(e) {
 
 function onPause() {
   if (isAppForeground) {
-    admob.destroyBannerView();
+    //admob.destroyBannerView();
     isAppForeground = false;
   }
 }
 
 function onResume() {
   if (!isAppForeground) {
-    setTimeout(admob.createBannerView, 1);
-    setTimeout(admob.requestInterstitialAd, 1);
+    //setTimeout(admob.createBannerView, 1);
+    setTimeout(admob.requestInterstitialAd, 1000);
     isAppForeground = true;
   }
 }
