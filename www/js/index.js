@@ -3,7 +3,7 @@ var isAppForeground = true;
 function onAdLoaded(e) {
   if (isAppForeground) {
     if (e.adType === admob.AD_TYPE.INTERSTITIAL) {
-      setTimeout(admob.showInterstitialAd, 1000 * 60 * 2);
+      admob.showInterstitialAd();
     }
   }
 }
@@ -34,10 +34,10 @@ function onResume() {
 // optional, in case respond to events
 function registerAdEvents() {
   document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
-  //document.addEventListener(admob.events.onAdClosed, onAdClosed);
+  document.addEventListener(admob.events.onAdClosed, onAdClosed);
 
-  //document.addEventListener("pause", onPause, false);
-  //document.addEventListener("resume", onResume, false);
+  document.addEventListener("pause", onPause, false);
+  document.addEventListener("resume", onResume, false);
 }
 
 function initAds() {
@@ -55,10 +55,10 @@ function initAds() {
       publisherId:          admobid.banner,
       interstitialAdId:     admobid.interstitial,
       bannerAtTop: true,	    
-      autoShowInterstitial: false
+      autoShowInterstitial: true
     });
 
-    registerAdEvents();
+    //registerAdEvents();
 
   } else {
     alert('AdMobAds plugin not ready');
