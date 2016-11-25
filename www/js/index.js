@@ -26,7 +26,7 @@ function onPause() {
 function onResume() {
   if (!isAppForeground) {
     setTimeout(admob.createBannerView, 1);
-    setTimeout(admob.requestInterstitialAd, 1000 * 60 * 0.5);
+    setTimeout(admob.requestInterstitialAd, 1000 * 60 * 1);
     isAppForeground = true;
   }
 }
