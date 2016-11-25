@@ -36,8 +36,8 @@ function registerAdEvents() {
   document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
   document.addEventListener(admob.events.onAdClosed, onAdClosed);
 
-  document.addEventListener("pause", onPause, false);
-  document.addEventListener("resume", onResume, false);
+  //document.addEventListener("pause", onPause, false);
+  //document.addEventListener("resume", onResume, false);
 }
 
 function initAds() {
@@ -58,7 +58,7 @@ function initAds() {
       autoShowInterstitial: false
     });
 
-    //registerAdEvents();
+    registerAdEvents();
 
   } else {
     alert('AdMobAds plugin not ready');
