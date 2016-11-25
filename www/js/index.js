@@ -58,7 +58,7 @@ function initAds() {
       autoShowInterstitial: false
     });
 
-    registerAdEvents();
+    //registerAdEvents();
 
   } else {
     alert('AdMobAds plugin not ready');
