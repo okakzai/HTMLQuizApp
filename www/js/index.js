@@ -3,7 +3,7 @@ var isAppForeground = true;
 function onAdLoaded(e) {
   if (isAppForeground) {
     if (e.adType === admob.AD_TYPE.INTERSTITIAL) {
-      admob.showInterstitialAd();
+      setTimeout(admob.showInterstitialAd, 1000 * 60 * 2);
     }
   }
 }
@@ -18,15 +18,15 @@ function onAdClosed(e) {
 
 function onPause() {
   if (isAppForeground) {
-    //admob.destroyBannerView();
+    admob.destroyBannerView();
     isAppForeground = false;
   }
 }
 
 function onResume() {
   if (!isAppForeground) {
-    //setTimeout(admob.createBannerView, 1);
-    setTimeout(admob.requestInterstitialAd, 1000);
+    setTimeout(admob.createBannerView, 1);
+    setTimeout(admob.requestInterstitialAd, 1);
     isAppForeground = true;
   }
 }
@@ -34,10 +34,10 @@ function onResume() {
 // optional, in case respond to events
 function registerAdEvents() {
   document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
-  document.addEventListener(admob.events.onAdClosed, onAdClosed);
+  //document.addEventListener(admob.events.onAdClosed, onAdClosed);
 
-  document.addEventListener("pause", onPause, false);
-  document.addEventListener("resume", onResume, false);
+  //document.addEventListener("pause", onPause, false);
+  //document.addEventListener("resume", onResume, false);
 }
 
 function initAds() {
